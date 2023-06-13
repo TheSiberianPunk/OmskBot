@@ -43,7 +43,7 @@ with open(filequest, 'r', newline='', encoding='utf8') as csvfile:
 logging.basicConfig(level=logging.INFO)
 
 # Инициализируем бота и диспетчер
-bot = Bot(token="6260709561:AAH6Cr8Cr_KxTRSbd3FCKUl-EP5PrMrsDUk")
+bot = Bot(token="YOURTOKEN") # используйте свой токен
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
@@ -175,7 +175,7 @@ async def show_stats(message: types.Message, state: FSMContext):
         mpl.close
 
         # Отправка юзеру графика в личные сообщения
-        photo = types.InputFile('D:\proj\Labs\quiz_res.png')
+        photo = types.InputFile('quiz_res.png')
         await bot.send_photo(message.chat.id, photo)
         remove('quiz_res.png')
 
